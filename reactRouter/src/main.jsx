@@ -1,5 +1,3 @@
-
-
 // Importing necessary modules from React and React Router
 import React from 'react';
 import ReactDOM from 'react-dom/client';
