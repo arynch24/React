@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+
 
 function App() {
   //use state is a hook used to make changes in the UI wherever needed without rendereing the whle tree
