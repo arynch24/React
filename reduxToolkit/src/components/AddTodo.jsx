@@ -1,17 +1,19 @@
-import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {addTodo} from '../features/todo/todoSlice' 
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../features/todo/todoSlice';
 
 function AddTodo() {
+  const [input, setInput] = useState(''); // Local state to manage input field
+  const dispatch = useDispatch(); // Hook to dispatch actions to the Redux store
 
-    const [input, setInput] = useState('')
-    const dispatch = useDispatch()
+  const addTodoHandler = (e) => {
+    e.preventDefault();
+    if (!input.trim()) return; // Prevent empty todo submissions
 
-    const addTodoHandler = (e) => {
-        e.preventDefault()
-        dispatch(addTodo(input))
-        setInput('')
-    }
+    // Dispatch the addTodo action with the text payload
+    dispatch(addTodo({ text: input }));
+    setInput(''); // Clear the input field after submission
+  };
 
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
@@ -29,7 +31,7 @@ function AddTodo() {
         Add Todo
       </button>
     </form>
-  )
+  );
 }
 
-export default AddTodo
+export default AddTodo;
