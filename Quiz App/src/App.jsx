@@ -15,10 +15,10 @@ const Button = ({ onClick, children, className = "" }) => {
 };
 
 const participants = [
-  { name: "Alice", team: "A" },
-  { name: "Bob", team: "B" },
-  { name: "Charlie", team: "C" },
-  { name: "David", team: "D" },
+  { name: "Aryan", team: "A" },
+  { name: "Harsh", team: "B" },
+  { name: "Prakhar", team: "C" },
+  { name: "Invincible", team: "D" },
 ];
 
 export default function QuizApp() {
@@ -79,6 +79,11 @@ export default function QuizApp() {
   return (
     <div className="p-6 max-w-3xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">JavaScript Output-Based Quiz</h1>
+      <div className="flex justify-between my-4 p-2 border-1 rounded-md">
+        <Button onClick={prevQuestion}>Previous</Button>
+        <Button onClick={nextQuestion}>Next</Button>
+      </div>
+
       <div className="mb-6 p-4 border rounded-lg shadow-md bg-white">
         <h2 className="text-lg font-semibold">Question {currentQuestionIndex + 1}:</h2>
         <SyntaxHighlighter language="javascript" style={materialDark} className="rounded-md">
@@ -111,10 +116,6 @@ export default function QuizApp() {
         ))}
       </div>
       <Button onClick={handleAnswer} className="mt-4">Submit Answer</Button>
-      <div className="flex justify-between mt-4">
-        <Button onClick={prevQuestion}>Previous</Button>
-        <Button onClick={nextQuestion}>Next</Button>
-      </div>
 
       <h2 className="text-lg font-semibold mt-6">Leaderboard</h2>
       <ul className="mt-2">
