@@ -15,10 +15,10 @@ const Button = ({ onClick, children, className = "" }) => {
 };
 
 const participants = [
-  { name: "Aryan", team: "A" },
-  { name: "Harsh", team: "B" },
+  { name: "Ashutosh", team: "A" },
+  { name: "Shoyeb", team: "B" },
   { name: "Prakhar", team: "C" },
-  { name: "Invincible", team: "D" },
+  { name: "Durgesh", team: "D" },
 ];
 
 export default function QuizApp() {
